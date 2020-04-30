@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello React!</title>
+    <style>
+        video {
+            border: 1px solid black;
+            height: 250px;
+            width: 250px;
+        }
+
+        #testarea .testParticipant {
+            float: left;
+        }
+
+        #testarea {
+            clear: both;
+        }
+
+        .testParticipant span {
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div id="example"></div>
+
+
+<div id="testarea"></div>
+
+<hr style="clear:both;">
+
+<video id="srcvideo" controls autoplay="true" style="height:50px; width:50px;" playsinline loop muted src="./test.mp4"></video>
+
+
+<script>
+
+    document.querySelector('#testarea').addEventListener("click", function (event) {
+        console.log(event.target);
+        event.target.closest('.testParticipant').remove();
+    });
+
+    function add(pName) {
+
+        var d = document.createElement('div');
+        d.setAttribute("class", "testParticipant");
+        var name = document.createElement('span');
+        name.innerHTML = pName || ("BOB-" + Math.round(1000 + (Math.random() * 1000)));
+        d.appendChild(name);
+
+        var v = document.createElement('video');
+        d.appendChild(v);
+
+        v.autoplay = true;
+        v.muted = true;
+        v.playsinline = true;
+        v.controls = true;
+
+        document.querySelector('#testarea').appendChild(d);
+
+        var srcvideo = document.getElementById('srcvideo');
+        if (srcvideo.captureStream) {
+            stream = srcvideo.captureStream(30);
+        } else if (srcvideo.mozCaptureStream) {
+            stream = srcvideo.mozCaptureStream(30);
+        } else {
+            console.error('Stream capture is not supported');
+            stream = null;
+        }
+
+        v.srcObject = stream
+    }
+
+    add("BOB-1");
+    add("BOB-2");
+</script>
+<input type="button" onclick="add()" value="add">
+<input type="button" onclick="add('BOB-1')" value="add 1">
+
+
+<script src="main.js"></script>
+
+</body>
+</html>

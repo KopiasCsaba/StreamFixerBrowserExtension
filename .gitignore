@@ -1,0 +1,3 @@
+.idea
+core/node_modules/*
+builds/old*

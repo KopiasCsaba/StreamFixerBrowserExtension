@@ -1,0 +1,32 @@
+.name {
+    position: absolute;
+    top: -25px;
+    color: white;
+    font-size: 15px;
+    padding-left: 2px;
+
+}
+
+.participantView :global(video) {
+    position: absolute;
+    width: calc(100%);
+    height: calc(100%);
+    left: 0px;
+    top: 0px;
+}
+
+.participantView {
+    text-align: center;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    margin-bottom: 1px;
+    padding-top: 56.25%;
+    position: relative;
+    margin-top: 25px;
+}
+
+.participantView :global(input) {
+    font-size: 9px;
+    font-weight: bold;
+    margin-right: 2px;
+}

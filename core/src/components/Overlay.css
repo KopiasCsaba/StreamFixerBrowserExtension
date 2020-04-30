@@ -1,0 +1,25 @@
+.customOverlay {
+    visibility: visible;
+    width: 100%;
+    min-width: 150px;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background: rgba(0.5, 0.5, 0.5, 0.5);
+    text-align: right;
+    z-index: 9999999;
+}
+
+.small {
+    width: 250px;
+}
+
+.minimised .ovlcontainer {
+    display: none;
+}
+
+.ovlcontainer {
+    background: black;
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,15 @@
+.toolbarAlign {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.toolbar {
+    display: flex;
+    flex-direction: row;
+    width: 250px;
+
+}
+
+.item {
+    flex: 1;
+}
