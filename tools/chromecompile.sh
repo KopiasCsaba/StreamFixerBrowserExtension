@@ -4,4 +4,4 @@ cd "$DIR"
 
 bash ./copy.sh
 cd ../chrome/;
-zip -r -FS ../releases/StreamFixerChrome.zip ./* --exclude *.git*.
+zip -r -FS ../builds/StreamFixerChrome.zip ./* --exclude *.git*.

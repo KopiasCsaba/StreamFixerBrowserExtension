@@ -15,6 +15,10 @@ module.exports = (env) => {
             extensions: [".ts", ".tsx", ".js", ".jsx"]
         },
 
+        optimization: {
+            minimize: false,
+        },
+
         module: {
             rules: [
                 {

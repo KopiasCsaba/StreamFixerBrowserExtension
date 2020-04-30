@@ -4,4 +4,4 @@ cd "$DIR"
 
 bash ./copy.sh
 cd ../firefox/;
-zip -r -FS ../releases/StreamFixerFirefox.xpi  ./* --exclude *.git*.
+zip -r -FS ../builds/StreamFixerFirefox.xpi  ./* --exclude *.git*.
