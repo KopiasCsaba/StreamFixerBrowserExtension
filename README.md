@@ -18,7 +18,7 @@ that you have no real and reliable way to get every participant's stream separat
 Skype offers [NDI](https://support.skype.com/en/faq/FA34853/what-is-skype-for-content-creators), that is almost a awesome, but it has two problems:
  * It only works on windows
  * It resizes if the participant's network quality changes drastically
- * + You might want to use another service wich offers better A/V quality
+ * ... and you might want to use another service wich offers better A/V quality
 
 You can "window capture" any video conferencing solution, but they are usually not designed with that in mind.
 When participants joining, leaving (or just speaking) the layout usually changes, not to mention if
@@ -26,6 +26,7 @@ you close the window and start it again tomorrow.
 The participant's streams are not always as big as they could be, therefore losing quality.
 
 See, how the layout changes when someone joins:
+
 ![Problem](docs/resources/problem.gif)
 
 # The solution
@@ -33,6 +34,7 @@ StreamFixer offers a solution for that problem by creating a full-width fixed or
 
 When someone joins, they will be put to the end of the stack.
 If they were already here, they will be put back where they were before. (Matched by name)
+
 ![Problem](docs/resources/solution.gif)
 
 # Screenshots
