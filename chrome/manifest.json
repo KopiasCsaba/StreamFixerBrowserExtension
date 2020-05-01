@@ -1,6 +1,6 @@
 {
   "name": "StreamFixer",
-  "version": "1.0",
+  "version": "1.3",
   "description": "Grabs video elements and fixes them in an overlay, enabling window capturing in streaming software.",
   "manifest_version": 2,
   "permissions": [
