@@ -30,7 +30,7 @@ See, how the layout changes when someone joins:
 ![Problem](docs/resources/problem.gif)
 
 # The solution
-StreamFixer offers a solution for that problem by creating a full-width fixed order single column from the streams available.
+StreamFixer offers a solution for that problem by creating a full-width fixed order single column list from the streams available.
 
 When someone joins, they will be put to the end of the stack.
 If they were already here, they will be put back where they were before. (Matched by name)
