@@ -30949,11 +30949,10 @@ function Overlay() {
     const [isSmall] = reactn_1.useGlobal("overlaySmall");
     const [participants] = reactn_1.useGlobal("participants");
     const [guestMode] = reactn_1.useGlobal("guestMode");
-    // Order participants by their index
-    const orderedParticipants = Object.keys(participants).sort((a, b) => participants[a].index - participants[b].index);
+    const participantsOrderedByIndex = Object.keys(participants).sort((a, b) => participants[a].index - participants[b].index);
+    const participantsOrderedByUpdate = Object.keys(participants).sort((a, b) => participants[b].lastUpdate - participants[a].lastUpdate);
     // Manage guest mode
-    const latestParticipantName = orderedParticipants[orderedParticipants.length - 1];
-    const guest = guestMode && reactn_2.default.createElement(ParticipantView_1.ParticipantView, { participant: participants[latestParticipantName], key: -1, isGuest: true });
+    const guest = guestMode && reactn_2.default.createElement(ParticipantView_1.ParticipantView, { participant: participants[participantsOrderedByUpdate[0]], key: -1, isGuest: true });
     react_1.useEffect(() => {
         // Signal browser window size update after render
         bridge_1.updateWindowSize(isMinimised || isSmall, overlayEl.current.offsetHeight);
@@ -30970,7 +30969,7 @@ function Overlay() {
         reactn_2.default.createElement(Toolbar_1.Toolbar, null),
         reactn_2.default.createElement("div", { className: style.ovlcontainer },
             guest,
-            orderedParticipants.map((p, i) => reactn_2.default.createElement(ParticipantView_1.ParticipantView, { participant: participants[p], key: i }))));
+            participantsOrderedByIndex.map((p, i) => reactn_2.default.createElement(ParticipantView_1.ParticipantView, { participant: participants[p], key: i }))));
 }
 exports.Overlay = Overlay;
 
@@ -31294,9 +31293,11 @@ function updateStateParticipants(stateParticipants, pageParticipants) {
             // We had this participant already
             if (now.currentStreamId != pp.streamId || !(now.stream instanceof MediaStream)) {
                 // But their stream is changed, or it wasn't a stream originally.
+                log_1.log("Updating participant...");
                 changed = true;
                 now.stream = captureStream(pp.node);
                 now.currentStreamId = pp.streamId;
+                now.lastUpdate = Date.now();
             }
         }
         else {
@@ -31311,6 +31312,7 @@ function updateStateParticipants(stateParticipants, pageParticipants) {
                     index: Object.keys(updatedStateParticipants).length,
                     name: pp.name,
                     stream,
+                    lastUpdate: Date.now(),
                 };
             }
         }

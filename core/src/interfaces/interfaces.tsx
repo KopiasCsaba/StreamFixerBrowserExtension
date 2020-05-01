@@ -13,6 +13,8 @@ export interface StateParticipant {
 
     // The stream that is in the preview currently.
     stream?: any;
+
+    lastUpdate: number;
 }
 
 export type StateParticipantList = { [ key: string ]: StateParticipant };

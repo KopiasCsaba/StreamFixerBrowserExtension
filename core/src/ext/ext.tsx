@@ -119,10 +119,11 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
 
             if (now.currentStreamId != pp.streamId || !(now.stream instanceof MediaStream)) {
                 // But their stream is changed, or it wasn't a stream originally.
-
+                log("Updating participant...");
                 changed = true;
                 now.stream = captureStream(pp.node);
                 now.currentStreamId = pp.streamId;
+                now.lastUpdate =  Date.now();
             }
         } else {
             // We didn't knew this participant before, add him/her.
@@ -136,6 +137,7 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
                     index: Object.keys(updatedStateParticipants).length,
                     name: pp.name,
                     stream,
+                    lastUpdate: Date.now(),
                 }
             }
         }

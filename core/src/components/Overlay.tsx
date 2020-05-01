@@ -22,12 +22,11 @@ export function Overlay() {
     const [ participants ] = useGlobal("participants");
     const [ guestMode ] = useGlobal("guestMode");
 
-    // Order participants by their index
-    const orderedParticipants: string[] = Object.keys(participants).sort((a, b) => participants[ a ].index - participants[ b ].index);
+    const participantsOrderedByIndex: string[] = Object.keys(participants).sort((a, b) => participants[ a ].index - participants[ b ].index);
+    const participantsOrderedByUpdate: string[] = Object.keys(participants).sort((a, b) => participants[ b ].lastUpdate - participants[ a ].lastUpdate);
 
     // Manage guest mode
-    const latestParticipantName = orderedParticipants[ orderedParticipants.length - 1 ];
-    const guest = guestMode && <ParticipantView participant={participants[ latestParticipantName ]} key={-1} isGuest={true}/>
+    const guest = guestMode && <ParticipantView participant={participants[ participantsOrderedByUpdate[ 0 ] ]} key={-1} isGuest={true}/>
 
     useEffect(() => {
         // Signal browser window size update after render
@@ -47,7 +46,7 @@ export function Overlay() {
         <Toolbar/>
         <div className={style.ovlcontainer}>
             {guest}
-            {orderedParticipants.map((p, i) => <ParticipantView participant={participants[ p ]} key={i}/>)}
+            {participantsOrderedByIndex.map((p, i) => <ParticipantView participant={participants[ p ]} key={i}/>)}
         </div>
     </div>
 }
