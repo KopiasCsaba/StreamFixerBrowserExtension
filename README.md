@@ -1,3 +1,13 @@
+# Table of contents
+ * [The problem this solves](#the-problem-this-solves)
+ * [The solution](#the-solution)
+ * [Screenshots](#screenshots)
+ * [Supported sites](#supported-sites)
+ * [Install](#install)
+ * [Known bugs](#known-bugs)
+ * [More information](#more-information)
+
+
 # Stream Fixer Firefox & Chrome extension
  	
 This extension is for you, if you want to broadcast a video chat to your audience from a streaming software like  [OBS](http://obsproject.com), vMix, XSplit, Wirecast.
@@ -44,26 +54,19 @@ If they were already here, they will be put back where they were before. (Matche
 <a href="https://raw.githubusercontent.com/KopiasCsaba/StreamFixerBrowserExtension/master/docs/resources/screenshots/gr_maximised2.png"><img src="docs/resources/screenshots/gr_maximised2.png" height="200"></a>
 <a href="https://raw.githubusercontent.com/KopiasCsaba/StreamFixerBrowserExtension/master/docs/resources/screenshots/gr_ui.png"><img src="docs/resources/screenshots/gr_ui.png" height="200"></a>
 
-
-# How to use it?
-TODO ADD VIDEO
-
-Feel free to open issues with ideas or bugs or feature requests, and share this with others!
-
-
 # Supported sites
  * [http://whereby.com](http://whereby.com)
  * [http://meet.jit.si](http://meet.jit.si)
  
 Suggest other services as issue if you need them, it is easy to add support for a page that fits the conditions.
 
+# Install
+ * Install the Firefox extension here: [https://addons.mozilla.org/en-US/firefox/addon/streamfixer/](https://addons.mozilla.org/en-US/firefox/addon/streamfixer/)
+ * Install the Chrome extension here: *coming soon*
+
 # Known bugs
  * Flashing when two or more participants have the same name
     * Solution: Never have participants with the same name.
-
-# Setup
- * Install the Firefox extension here: [https://addons.mozilla.org/en-US/firefox/addon/streamfixer/](https://addons.mozilla.org/en-US/firefox/addon/streamfixer/)
- * Install the Chrome extension here: *coming soon*
 
 
 # More information
