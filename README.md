@@ -35,9 +35,9 @@ StreamFixer offers a solution for that problem by creating a full-width fixed or
 # Screenshots
 
 
-[![Minimised](docs/resources/screenshots/gr_minimised.png | height=300)](docs/resources/screenshots/gr_minimised.png)
-[![Maximised](docs/resources/screenshots/gr_minimised.png | height=300)](docs/resources/screenshots/gr_maximised.png)
-[![UI overview](docs/resources/screenshots/gr_minimised.png | height=300)](docs/resources/screenshots/gr_ui.png)
+[![Minimised](docs/resources/screenshots/gr_minimised.png|height=300)](docs/resources/screenshots/gr_minimised.png)
+[![Maximised](docs/resources/screenshots/gr_minimised.png|height=300)](docs/resources/screenshots/gr_maximised.png)
+[![UI overview](docs/resources/screenshots/gr_minimised.png|height=300)](docs/resources/screenshots/gr_ui.png)
 
 # How to use it?
 TODO ADD VIDEO
