@@ -45,7 +45,7 @@ export function ParticipantView(props: Props) {
     return <div className={style.participantView}>
         <div className={style.name}>
             {props.isGuest && "LATEST: "}
-            {!props.isGuest && <input type="button" value="X" onClick={onRemove}/>}
+            {!props.isGuest && <input type="button" value="✕" onClick={onRemove}/>}
             {props.participant.name}
         </div>
         <video ref={videoEl} className="sfVideo"/>

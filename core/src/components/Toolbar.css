@@ -10,6 +10,16 @@
 
 }
 
+
 .item {
     flex: 1;
+    line-height: 32px;
+    font-size: 24px;
+    color: black;
+    padding: 0px;
+    font-weight:bold;
+}
+
+.blackItem {
+    filter: saturate(0);
 }

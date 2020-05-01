@@ -26,7 +26,9 @@
 }
 
 .participantView :global(input) {
-    font-size: 9px;
-    font-weight: bold;
+    font-size: 16px;
+    /*font-weight: bold;*/
     margin-right: 2px;
+    line-height: 11px;
+    padding: 0px 0px 0px 0px;
 }

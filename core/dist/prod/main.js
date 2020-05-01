@@ -2930,7 +2930,7 @@ function ParticipantView(props) {
     return reactn_2.default.createElement("div", { className: style.participantView },
         reactn_2.default.createElement("div", { className: style.name },
             props.isGuest && "LATEST: ",
-            !props.isGuest && reactn_2.default.createElement("input", { type: "button", value: "X", onClick: onRemove }),
+            !props.isGuest && reactn_2.default.createElement("input", { type: "button", value: "\u2715", onClick: onRemove }),
             props.participant.name),
         reactn_2.default.createElement("video", { ref: videoEl, className: "sfVideo" }));
 }
@@ -2969,7 +2969,7 @@ module.exports = content.locals || {};
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(12);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".XBIYEVHT1p7fdXkRbbuho {\n    position: absolute;\n    top: -25px;\n    color: white;\n    font-size: 15px;\n    padding-left: 2px;\n\n}\n\n._1tscJREj325ASxQO5thofe video {\n    position: absolute;\n    width: calc(100%);\n    height: calc(100%);\n    left: 0px;\n    top: 0px;\n}\n\n._1tscJREj325ASxQO5thofe {\n    text-align: center;\n    border-top: 1px solid white;\n    border-bottom: 1px solid white;\n    margin-bottom: 1px;\n    padding-top: 56.25%;\n    position: relative;\n    margin-top: 25px;\n}\n\n._1tscJREj325ASxQO5thofe input {\n    font-size: 9px;\n    font-weight: bold;\n    margin-right: 2px;\n}", ""]);
+exports.push([module.i, ".XBIYEVHT1p7fdXkRbbuho {\n    position: absolute;\n    top: -25px;\n    color: white;\n    font-size: 15px;\n    padding-left: 2px;\n\n}\n\n._1tscJREj325ASxQO5thofe video {\n    position: absolute;\n    width: calc(100%);\n    height: calc(100%);\n    left: 0px;\n    top: 0px;\n}\n\n._1tscJREj325ASxQO5thofe {\n    text-align: center;\n    border-top: 1px solid white;\n    border-bottom: 1px solid white;\n    margin-bottom: 1px;\n    padding-top: 56.25%;\n    position: relative;\n    margin-top: 25px;\n}\n\n._1tscJREj325ASxQO5thofe input {\n    font-size: 16px;\n    /*font-weight: bold;*/\n    margin-right: 2px;\n    line-height: 11px;\n    padding: 0px 0px 0px 0px;\n}", ""]);
 // Exports
 exports.locals = {
 	"name": "XBIYEVHT1p7fdXkRbbuho",
@@ -3012,10 +3012,10 @@ function Toolbar(props) {
     };
     return reactn_2.default.createElement("div", { className: style.toolbarAlign },
         reactn_2.default.createElement("div", { className: style.toolbar },
-            reactn_2.default.createElement("input", { type: "button", className: style.item, value: "G", title: "Toggle guest mode", onClick: onToggleGuest }),
-            reactn_2.default.createElement("input", { type: "button", className: style.item, value: "R", title: "Reset", onClick: onResetClick }),
-            reactn_2.default.createElement("input", { type: "button", className: style.item, value: "[]", title: "Resize", onClick: onResizeClick }),
-            reactn_2.default.createElement("input", { type: "button", className: style.item, value: "_", title: "Minimise", onClick: onMinimiseClick })));
+            reactn_2.default.createElement("input", { type: "button", className: `${style.item} ${style.blackItem}`, value: "\u270B", title: "Toggle guest mode", onClick: onToggleGuest }),
+            reactn_2.default.createElement("input", { type: "button", className: style.item, value: "\u21BA", title: "Reset", onClick: onResetClick }),
+            reactn_2.default.createElement("input", { type: "button", className: style.item, value: "\uD83C\uDCA0", title: "Resize", onClick: onResizeClick }),
+            reactn_2.default.createElement("input", { type: "button", className: style.item, value: "\uFF3F", title: "Minimise", onClick: onMinimiseClick })));
 }
 exports.Toolbar = Toolbar;
 
@@ -3052,12 +3052,13 @@ module.exports = content.locals || {};
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(12);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "._3qSscFm_mOZ_lpNz3IPQfE {\n    display: flex;\n    flex-direction: row-reverse;\n}\n\n._2JtGup6TzKok7I8ziyzsFs {\n    display: flex;\n    flex-direction: row;\n    width: 250px;\n\n}\n\n._3FpvvwCfNMpkWpRaJp-UrY {\n    flex: 1;\n}", ""]);
+exports.push([module.i, "._3qSscFm_mOZ_lpNz3IPQfE {\n    display: flex;\n    flex-direction: row-reverse;\n}\n\n._2JtGup6TzKok7I8ziyzsFs {\n    display: flex;\n    flex-direction: row;\n    width: 250px;\n\n}\n\n\n._3FpvvwCfNMpkWpRaJp-UrY {\n    flex: 1;\n    line-height: 32px;\n    font-size: 24px;\n    color: black;\n    padding: 0px;\n    font-weight:bold;\n}\n\n.P2G4-tYCuZR8ziiIKL1ll {\n    filter: saturate(0);\n}\n", ""]);
 // Exports
 exports.locals = {
 	"toolbarAlign": "_3qSscFm_mOZ_lpNz3IPQfE",
 	"toolbar": "_2JtGup6TzKok7I8ziyzsFs",
-	"item": "_3FpvvwCfNMpkWpRaJp-UrY"
+	"item": "_3FpvvwCfNMpkWpRaJp-UrY",
+	"blackItem": "P2G4-tYCuZR8ziiIKL1ll"
 };
 module.exports = exports;
 

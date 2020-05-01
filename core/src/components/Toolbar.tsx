@@ -33,10 +33,10 @@ export function Toolbar(props: Props) {
 
     return <div className={style.toolbarAlign}>
         <div className={style.toolbar}>
-            <input type="button" className={style.item} value="G" title="Toggle guest mode" onClick={onToggleGuest}/>
-            <input type="button" className={style.item} value="R" title="Reset" onClick={onResetClick}/>
-            <input type="button" className={style.item} value="[]" title="Resize" onClick={onResizeClick}/>
-            <input type="button" className={style.item} value="_" title="Minimise" onClick={onMinimiseClick}/>
+            <input type="button" className={`${style.item} ${style.blackItem}`} value="✋" title="Toggle guest mode" onClick={onToggleGuest}/>
+            <input type="button" className={style.item} value="↺" title="Reset" onClick={onResetClick}/>
+            <input type="button" className={style.item} value="🂠" title="Resize" onClick={onResizeClick}/>
+            <input type="button" className={style.item} value="＿" title="Minimise" onClick={onMinimiseClick}/>
         </div>
     </div>
 }
