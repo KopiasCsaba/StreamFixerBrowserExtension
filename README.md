@@ -1,5 +1,5 @@
 # Table of contents
- * [The problem this solves](#the-problem-this-solves)
+ * [The problem](#the-problem)
  * [The solution](#the-solution)
  * [Screenshots](#screenshots)
  * [Supported sites](#supported-sites)
@@ -21,7 +21,7 @@ Also, the overlays are placed in a 16:9 full-width box therefore the quality of 
 
  +TODO video+
  
-# The problem this solves
+# The problem
 When you want to broadcast participants from a video call, you will face the problem, 
 that you have no real and reliable way to get every participant's stream separately into your streaming software.
 
