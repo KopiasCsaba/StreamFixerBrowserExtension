@@ -25,11 +25,14 @@ When participants joining, leaving (or just speaking) the layout usually changes
 you close the window and start it again tomorrow. 
 The participant's streams are not always as big as they could be, therefore losing quality.
 
+See, how the layout changes when someone joins:
 ![Problem](docs/resources/problem.gif)
 
 # The solution
 StreamFixer offers a solution for that problem by creating a full-width fixed order single column from the streams available.
 
+When someone joins, they will be put to the end of the stack.
+If they were already here, they will be put back where they were before. (Matched by name)
 ![Problem](docs/resources/solution.gif)
 
 # Screenshots
@@ -47,15 +50,19 @@ Feel free to open issues with ideas or bugs or feature requests, and share this 
 
 
 # Supported sites
- * http://whereby.com
- * http://meet.jit.si
+ * [http://whereby.com](http://whereby.com)
+ * [http://meet.jit.si](http://meet.jit.si)
  
 Suggest other services as issue if you need them, it is easy to add support for a page that fits the conditions.
 
+# Known bugs
+ * Flashing when two or more participants have the same name
+    * Solution: Never have participants with the same name.
+
 # Setup
- * Install the firefox extension here: TODO
- * Install the chrome extension here: TODO
+ * Install the Firefox extension here: [https://addons.mozilla.org/en-US/firefox/addon/streamfixer/](https://addons.mozilla.org/en-US/firefox/addon/streamfixer/)
+ * Install the Chrome extension here: *coming soon*
 
 
 # More information
- * docs/development.md
+ * [docs/development.md](docs/development.md)
