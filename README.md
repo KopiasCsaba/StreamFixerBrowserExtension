@@ -35,7 +35,7 @@ StreamFixer offers a solution for that problem by creating a full-width fixed or
 # Screenshots
 
 
-<img src="docs/resources/screenshots/gr_minimised.png" height="200">
+<a href="docs/resources/screenshots/gr_minimised.png"><img src="docs/resources/screenshots/gr_minimised.png" height="200"></a>
 
 [![Minimised](docs/resources/screenshots/gr_minimised.png|height=300)](docs/resources/screenshots/gr_minimised.png)
 [![Maximised](docs/resources/screenshots/gr_minimised.png|height=300)](docs/resources/screenshots/gr_maximised.png)
