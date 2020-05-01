@@ -28,13 +28,13 @@ and by this we restore it every time the site is loaded.
 
 
 # Directories
- * /builds/: Temporary, unsigned chrome & firefox extensions
- * /firefox/: Firefox extension
- * /chrome/: Chrome extension
- * /tools/: Scripts for building/compiling stuff
- * /core/: Common code amongst the extensions
-    * /dist/: the compiled content script
- * /docs/: documentation
+ * /builds: Temporary, unsigned chrome & firefox extensions
+ * /firefox: Firefox extension
+ * /chrome: Chrome extension
+ * /tools: Scripts for building/compiling stuff
+ * /core: Common code amongst the extensions
+    * /dist: the compiled content script
+ * /docs: documentation
  
 
 # Tools
