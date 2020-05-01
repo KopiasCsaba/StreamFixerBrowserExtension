@@ -34,8 +34,7 @@ StreamFixer offers a solution for that problem by creating a full-width fixed or
 
 # Screenshots
 
-![Minimised](docs/resources/screenshots/gr_minimised.png)
-![Minimised](docs/resources/screenshots/gr_minimised.png = 100)
+![Minimised](docs/resources/screenshots/gr_minimised.png =100)
 
 [![Minimised](docs/resources/screenshots/gr_minimised.png|height=300)](docs/resources/screenshots/gr_minimised.png)
 [![Maximised](docs/resources/screenshots/gr_minimised.png|height=300)](docs/resources/screenshots/gr_maximised.png)
