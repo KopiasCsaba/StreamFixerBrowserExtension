@@ -11,14 +11,30 @@ The content script can be broken up into three parts:
  * Bridge (core/src/ext/bridge.tsx): For sending requests to background.js features
  * DOM query (core/src/ext/ext.tsx): These functions work on the targeted page itself
 
+# Overview of how it works
+ * This extension locates <video> elements on the page
+ * For every video element it tries to get the participant's name
+ * Creates an overlay
+ * Adds a new <video> per participant
+ * With [captureStream()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/captureStream) gets the original video's stream and assigns it to the new video.
+ 
+This way we don't touch the original DOM of the page too much, and we only need to assume the relation
+between a video element and the element that contains the participant's name. 
+Everything else can change on the page, even dynamically and it will not break.
+
+There is an index maintained in the localstorage, where we save the participant's name and index (order),
+and by this we restore it every time the site is loaded.
+
+
+
 # Directories
- * builds: Temporary, unsigned chrome & firefox extensions
- * firefox: Firefox extension
- * chrome: Chrome extension
- * tools: Scripts for building/compiling stuff
- * core: Common code amongst the extensions
-    * dist: the compiled content script
- * docs: documentation
+ * /builds/: Temporary, unsigned chrome & firefox extensions
+ * /firefox/: Firefox extension
+ * /chrome/: Chrome extension
+ * /tools/: Scripts for building/compiling stuff
+ * /core/: Common code amongst the extensions
+    * /dist/: the compiled content script
+ * /docs/: documentation
  
 
 # Tools
@@ -45,18 +61,3 @@ watch -n 1 tools/compile.sh (this compiles the extensions continously)
  - Load unpacked
  - Locate the chrome/manifest.json
  
-## General idea summary
- * This extension locates <video> elements on the page
- * For every video element it tries to get the participant's name
- * Creates an overlay
- * Adds a new <video> per participant
- * With [captureStream()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/captureStream) gets the original video's stream and assigns it to the new video.
- 
-This way we don't touch the original DOM of the page too much, and we only need to assume the relation
-between a video element and the element that contains the participant's name. 
-Everything else can change on the page, even dynamically and it will not break.
-
-There is an index maintained in the localstorage, where we save the participant's name and index (order),
-and by this we restore it every time the site is loaded.
-
-
