@@ -3074,6 +3074,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * This file contains stuff that is a glue between the background.js and the content script.
  *
  */
+const log_1 = __webpack_require__(10);
 const w = window;
 /**
  * Calculates the required window size & signals the resize event.
@@ -3092,12 +3093,12 @@ exports.updateWindowSize = (off, height) => {
  */
 const sendMessage = (type, content) => {
     if (w.chrome) {
-        // log("Sending to chrome",type,content);
+        log_1.log("Sending to chrome", type, content);
         w.chrome.runtime.sendMessage({ type, content });
     }
     if (navigator.userAgent.indexOf("Firefox") != -1) {
-        // log("Sending to firefox",type,content);
-        browser.runtime.sendMessage("stream-fixer@kopias.net", { type, content });
+        log_1.log("Sending to firefox", type, content);
+        browser.runtime.sendMessage("stream-fixer2@kopias.net", { type, content });
     }
 };
 

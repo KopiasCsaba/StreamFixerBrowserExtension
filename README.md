@@ -67,6 +67,7 @@ Suggest other services as issue if you need them, it is easy to add support for 
 # Known bugs
  * Flashing when two or more participants have the same name
     * Solution: Never have participants with the same name.
+ * When someone joins every view flashes one
 
 
 # More information

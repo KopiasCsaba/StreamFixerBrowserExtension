@@ -2,6 +2,8 @@
  * This file contains stuff that is a glue between the background.js and the content script.
  *
  */
+import { log } from "./log";
+
 const w = window as any;
 /**
  * Calculates the required window size & signals the resize event.
@@ -24,13 +26,13 @@ export const updateWindowSize = (off: boolean, height: number) => {
  */
 const sendMessage = (type: string, content: any) => {
     if (w.chrome) {
-        // log("Sending to chrome",type,content);
+        log("Sending to chrome",type,content);
         w.chrome.runtime.sendMessage({ type, content });
     }
 
     if (navigator.userAgent.indexOf("Firefox") != -1) {
-        // log("Sending to firefox",type,content);
-        browser.runtime.sendMessage("stream-fixer@kopias.net", { type, content });
+        log("Sending to firefox",type,content);
+        browser.runtime.sendMessage("stream-fixer2@kopias.net", { type, content });
     }
 };
 
