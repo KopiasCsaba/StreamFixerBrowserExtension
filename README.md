@@ -21,7 +21,7 @@ Also, the overlays are placed in a 16:9 full-width box therefore the quality of 
 
 Watch how to live stream an online conferece:
 
-[![How to live stream an online conference](https://img.youtube.com/vi/IbEqSYezKOM/0.jpg)]( https://youtu.be/IbEqSYezKOM )
+[![How to live stream an online conference](docs/resources/youtube.png)]( https://youtu.be/IbEqSYezKOM )
  
  
 # The problem
