@@ -67,11 +67,22 @@ Suggest other services as issue if you need them, it is easy to add support for 
  * Install the Firefox extension here: [https://addons.mozilla.org/en-US/firefox/addon/streamfixer/](https://addons.mozilla.org/en-US/firefox/addon/streamfixer/)
  * Install the Chrome extension here: *coming soon*
 
+# Tips
+ * Many linux window manager supports dragging the window by pressing some hotkey, usually alt. XFCE and KDE surely, 
+   so when you have the oversized window, you quickly can drag&drop it by alt+clicking.
+    * For windows, you might want to check out [AltDrag](https://stefansundin.github.io/altdrag/) for the same functionality
+ * Don't minimize the browser while you capturing it, at least on linux the window capture pauses while the window is minimized.
+ 
+ 
 # Known bugs
  * Flashing when two or more participants have the same name
     * Solution: Never have participants with the same name.
- * When someone joins every view flashes one
+ * When someone joins every view flashes once
+    * Solution: there is none yet
+ * When someone leaves, the overlay image remains there, but upon the next event it turns to black. I'm not even sure what would be good: keep it there, or turn it to black immediately.
+    * Solution: there is none yet
 
+# Contribute
+Feel free to open issues, PR-s or just leave your comments or ideas in the issues.
 
-# More information
- * [docs/development.md](docs/development.md)
+More information about development can be found in the [docs/development.md](docs/development.md) file.
