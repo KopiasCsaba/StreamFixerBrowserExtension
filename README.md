@@ -19,6 +19,7 @@ Because the order is fixed, joining or quitting users will not change the layout
 
 Also, the overlays are placed in a 16:9 full-width box therefore the quality of the video is as high as it can be.
 
+Watch how to live stream an online conferece:
 [![How to live stream an online conference](https://img.youtube.com/vi/IbEqSYezKOM/0.jpg)]( https://youtu.be/IbEqSYezKOM )
  
  
