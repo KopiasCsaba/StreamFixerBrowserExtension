@@ -85,4 +85,4 @@ Suggest other services as issue if you need them, it is easy to add support for 
 # Contribute
 Feel free to open issues, PR-s or just leave your comments or ideas in the issues.
 
-More information about development can be found in the [docs/development.md](docs/development.md) file.
+More information about development can be found in the [docs/development.md](docs/development.md) file.cd ..
