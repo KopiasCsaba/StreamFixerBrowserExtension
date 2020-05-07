@@ -8,9 +8,24 @@
  * [More information](#more-information)
 
 # Install
-Install the extension from the official extension stores of Firefox and Chrome:
-[![Install StreamFixer Firefox Addon](docs/resources/stores/firefox.png)](https://addons.mozilla.org/en-US/firefox/addon/streamfixer/)
-[![Install StreamFixer Chrome Extension](docs/resources/stores/chrome.png)](https://chrome.google.com/webstore/detail/streamfixer/koalccjpkobjlelaicppccppcffoikld)
+Install the extension from the official stores of Firefox and Chrome:
+
+<table border=0>
+ <tr>
+  <td>
+<a title="Install StreamFixer Firefox Addon" href="https://addons.mozilla.org/en-US/firefox/addon/streamfixer">
+ <img src="docs/resources/stores/firefox.png" height="58">
+ </a>
+  </td>
+  <td>
+ 
+<a title="Install StreamFixer Chrome Extension" href="(https://chrome.google.com/webstore/detail/streamfixer/koalccjpkobjlelaicppccppcffoikld">
+ <img src="docs/resources/stores/chrome.png" height="58">
+ </a>
+ </td>
+ </tr>
+ </table>
+ 
 
 # Stream Fixer Firefox & Chrome extension
  	
