@@ -1,11 +1,14 @@
 # Table of contents
- * [The problem](#the-problem)
- * [The solution](#the-solution)
+ * [Install](#install)
+ * [StreamFixer Firefox & Chrome extension](#streamfixer-firefox-&-chrome-extension)
  * [Screenshots](#screenshots)
  * [Supported sites](#supported-sites)
- * [Install](#install)
+ * [The problem this extension solves](#the-problem-this-extension-solves)
+ * [The solution](#the-solution)
+ * [Tips](#tips)
  * [Known bugs](#known-bugs)
- * [More information](#more-information)
+ * [Contribute](#contribute)
+
 
 # Install
 Install the extension from the official stores of Firefox and Chrome:
