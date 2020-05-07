@@ -1,6 +1,6 @@
 # Table of contents
  * [Install](#install)
- * [StreamFixer Firefox & Chrome extension](#streamfixer-firefox-&-chrome-extension)
+ * [StreamFixer Firefox & Chrome extension](#streamfixer-firefox---chrome-extension)
  * [Screenshots](#screenshots)
  * [Supported sites](#supported-sites)
  * [The problem this extension solves](#the-problem-this-extension-solves)
