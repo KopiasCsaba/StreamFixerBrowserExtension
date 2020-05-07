@@ -7,6 +7,10 @@
  * [Known bugs](#known-bugs)
  * [More information](#more-information)
 
+# Install
+Install the extension from the official extension stores of Firefox and Chrome:
+[![Install StreamFixer Firefox Addon](docs/resources/stores/firefox.png)](https://addons.mozilla.org/en-US/firefox/addon/streamfixer/)
+[![Install StreamFixer Chrome Extension](docs/resources/stores/chrome.png)](https://chrome.google.com/webstore/detail/streamfixer/koalccjpkobjlelaicppccppcffoikld)
 
 # Stream Fixer Firefox & Chrome extension
  	
@@ -63,9 +67,6 @@ If they were already here, they will be put back where they were before. (Matche
  
 Suggest other services as issue if you need them, it is easy to add support for a page that fits the conditions.
 
-# Install
- * Install the Firefox extension here: [https://addons.mozilla.org/en-US/firefox/addon/streamfixer/](https://addons.mozilla.org/en-US/firefox/addon/streamfixer/)
- * Install the Chrome extension here: *coming soon*
 
 # Tips
  * Many linux window manager supports dragging the window by pressing some hotkey, usually alt. XFCE and KDE surely, 
