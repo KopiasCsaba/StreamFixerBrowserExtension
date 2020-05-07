@@ -103,4 +103,4 @@ If they were already there, they will be added back where they were before origi
 # Contribute
 Feel free to open issues, PR-s or just leave your comments or ideas in the issues.
 
-More information about development can be found in the [docs/development.md](docs/development.md) file.cd ..
+More information about development can be found in the [docs/development.md](docs/development.md) file.
