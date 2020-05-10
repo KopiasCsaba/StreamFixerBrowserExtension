@@ -94,6 +94,12 @@ If they were already there, they will be added back where they were before origi
  
  * Don't minimize the browser while you capturing it, at least on linux the window capture pauses while the window is minimized.
  
+ * Verify that the audio is not stuttering when in fullscreen, you might need to use another browser or tweak some settings!
+    * Although seemingly firefox uses less cpu with whereby on linux, it was stuttering for me once when it was in live. Be careful & check your setup before going live.
+ 
+ * Check out my list of how-tos, tips and tricks at [SDGStreamingJourney](https://github.com/KopiasCsaba/SDGStreamingJourney/)
+ 
+ 
 # Known bugs
 
  * Flashing when two or more participants have the same name
