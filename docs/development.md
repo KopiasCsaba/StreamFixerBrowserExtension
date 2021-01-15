@@ -47,7 +47,7 @@ The tooling currently copies the core/dist/prod/main.js into the firefox and chr
 ./core/compile.sh # (this builds the react app on file change)
 
 # In another terminal:
-watch -n 1 tools/compile.sh (this compiles the extensions continously)
+watch -n 2 tools/compile.sh  # (this compiles the extensions continously)
 ```
  
 ## Firefox
@@ -58,6 +58,7 @@ watch -n 1 tools/compile.sh (this compiles the extensions continously)
   
 ## Chrome
  - Open chrome://extensions
+ - Enable Developer mode (top right)  
  - Load unpacked
  - Locate the directory "chrome" in here.
  
