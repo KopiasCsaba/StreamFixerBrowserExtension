@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "StreamFixer",
-  "version": "1.4",
+  "version": "1.5.0",
   "description": "Grabs video elements and fixes them in an overlay, enabling window capturing in streaming software.",
   "icons": {
     "48": "icons/mipmap-mdpi/ic_launcher.png",
@@ -14,7 +14,8 @@
     {
       "matches": [
         "*://whereby.com/*",
-        "*://meet.jit.si/*"
+        "*://meet.jit.si/*",
+        "*://meet.google.com/*"
       ],
       "js": [
         "main.js"
