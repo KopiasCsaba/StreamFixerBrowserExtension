@@ -52,12 +52,12 @@ watch -n 1 tools/compile.sh (this compiles the extensions continously)
  
 ## Firefox
   - Open about:debugging 
-  - This firefox
+  - Click on "This firefox"
   - Load temporary add-on
   - Locate the firefox/manifest.json
   
 ## Chrome
  - Open chrome://extensions
  - Load unpacked
- - Locate the chrome/manifest.json
+ - Locate the directory "chrome" in here.
  
