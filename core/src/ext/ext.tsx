@@ -29,7 +29,7 @@ export function getSiteConfig(): SiteConfig {
     if (url.match(/.*whereby.com\/[^/]+/g) && !url.match(/.*whereby.com\/user/g)) {
         return {
             name: "whereby",
-            getVideoName: (videoNode: Element) => (videoNode.closest('div[class^="content-"]').querySelector('[class^="nameBanner-"]') as any).innerText
+            getVideoName: (videoNode: Element) => (videoNode.closest('div[class*="content-"]').querySelector('[class*="nameBanner-"]') as any).innerText
         }
     }
 
@@ -123,7 +123,7 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
                 changed = true;
                 now.stream = captureStream(pp.node);
                 now.currentStreamId = pp.streamId;
-                now.lastUpdate =  Date.now();
+                now.lastUpdate = Date.now();
             }
         } else {
             // We didn't knew this participant before, add him/her.
