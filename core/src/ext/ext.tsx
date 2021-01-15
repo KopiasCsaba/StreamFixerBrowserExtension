@@ -9,68 +9,6 @@ import { log } from "./log";
  */
 
 /**
- * Determines if the current site is supported, or not by our extension.
- *
- * Returns null if not, and a configured SiteConfig object if it is.
- *
- * When adding a new site, this function is the only one that should be modified with the new configuration.
- */
-export function getSiteConfig(): SiteConfig {
-    const url = window.location.href;
-    // TEST PAGE
-    if (document.getElementById('testarea') !== null) {
-        return {
-            name: "Test",
-            getVideoName: (videoNode: Element) => videoNode.closest('div').querySelector('span').innerText
-        };
-    }
-
-    // WHEREBY
-    if (url.match(/.*whereby.com\/[^/]+/g) && !url.match(/.*whereby.com\/user/g)) {
-        return {
-            name: "whereby",
-            getVideoName: (videoNode: Element) => (videoNode.closest('div[class*="content-"]').querySelector('[class*="nameBanner-"]') as any).innerText
-        }
-    }
-
-    // JITSI
-    if (url.match(/.*meet.jit.si\/[^/]+/g) !== null) {
-        return {
-            name: "jitsy",
-            getVideoName: (videoNode: Element) => {
-                return videoNode.closest('.videocontainer').querySelector('.displayname').innerHTML;
-            }
-        }
-    }
-    // meet.google.com
-    if (url.match(/.*meet.google.com\/[^/]+/g) !== null) {
-        return {
-            name: "Google meet",
-            getVideoName: (videoNode: Element) => {
-                return videoNode.closest('div[data-requested-participant-id]').querySelector('div[data-self-name]').innerHTML;
-            }
-        }
-    }
-
-    return null;
-}
-
-/**
- * Wrapper for firefox's mozCaptureStream and chrome's captureStream method.
- * @param node
- */
-export function captureStream(node: any) {
-    if (node.captureStream) {
-        return node.captureStream();
-    } else if (node.mozCaptureStream) {
-        return node.mozCaptureStream();
-    }
-
-    console.error("This is an unsupported browser.");
-    return null;
-}
-
-/**
  * Lists the current participants from the current page's DOM tree.
  * @param getvideoName
  */
@@ -104,11 +42,74 @@ export const getPageParticipants = (getvideoName: GetVideoNameCb): CrawledPartic
 
     elements = getUniqueListBy(elements, 'streamId');
     elements = getUniqueListBy(elements, 'name');
-    // log("------------------");
+    log("------------------");
     // log(JSON.stringify(elements, null, " "));
+    log(JSON.stringify(elements));
     return elements;
 
 };
+
+/**
+ * Determines if the current site is supported, or not by our extension.
+ *
+ * Returns null if not, and a configured SiteConfig object if it is.
+ *
+ * When adding a new site, this function is the only one that should be modified with the new configuration.
+ */
+export function getSiteConfig(): SiteConfig {
+    const url = window.location.href;
+    // TEST PAGE
+    if (document.getElementById('testarea') !== null) {
+        return {
+            name: "Test",
+            getVideoName: (videoNode: Element) => videoNode.closest('div').querySelector('span').innerText
+        };
+    }
+
+    // WHEREBY
+    if (url.match(/.*whereby.com\/[^/]+/g) && !url.match(/.*whereby.com\/user/g)) {
+        return {
+            name: "whereby",
+            getVideoName: (videoNode: Element) => (videoNode.closest('div[class*="content-"]').querySelector('[class*="nameBanner-"]') as any).innerText
+        }
+    }
+
+    // JITSI
+    if (url.match(/.*meet.jit.si\/[^/]+/g) !== null) {
+        return {
+            name: "jitsy",
+            getVideoName: (videoNode: Element) => {
+                return videoNode.closest('.videocontainer').querySelector('.displayname').innerHTML;
+            }
+        }
+    }
+
+    // meet.google.com
+    if (url.match(/.*meet.google.com\/[^/]+/g) !== null) {
+        return {
+            name: "Google meet",
+            getVideoName: (videoNode: Element) => {
+                return videoNode.closest('div[data-requested-participant-id]').querySelector('div[data-self-name]').innerHTML;
+            }
+        }
+    }
+
+    // DISCORD
+    if (url.match(/.*discord.com\/[^/]+/g) !== null) {
+        return {
+            name: "DISCORD",
+            getVideoName: (videoNode: Element) => {
+                if (videoNode.closest('div[class*="videoGridWrapper-"]') == null) {
+                    // We should only work when in video grid mode.
+                    return null;
+                }
+                return videoNode.closest('div[class*="tileChild-"]').querySelector('span[class*="overlayTitleText-"]').innerHTML;
+            }
+        }
+    }
+
+    return null;
+}
 
 /**
  * Handles the merging of the DOM participants into the State's participant lists.
@@ -127,13 +128,14 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
         const now = updatedStateParticipants[ pp.name ];
         if (now) {
             // We had this participant already
-            if (now.currentStreamId != pp.streamId || !(now.stream instanceof MediaStream)) {
+            if (now.currentStreamId != pp.streamId || !(now.stream instanceof MediaStream) || now.wasMissing) {
                 // But their stream is changed, or it wasn't a stream originally.
                 log("Updating participant...", pp.name);
                 changed = true;
                 now.stream = captureStream(pp.node);
                 now.currentStreamId = pp.streamId;
                 now.lastUpdate = Date.now();
+                now.wasMissing = false;
             }
         } else {
 //             We didn't knew this participant before, add him/her.
@@ -148,7 +150,16 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
                     name: pp.name,
                     stream,
                     lastUpdate: Date.now(),
+                    wasMissing: false
                 }
+            }
+        }
+    }
+    for (const spName of Object.keys(updatedStateParticipants)) {
+        if (pageParticipants.filter(pp => pp.name == spName).length == 0) {
+            if (!updatedStateParticipants[ spName ].wasMissing) {
+                log("MISSING PARTICIPANT:", spName);
+                updatedStateParticipants[ spName ].wasMissing = true;
             }
         }
     }
@@ -158,6 +169,21 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
     }
     log("CHANGED:", changed);
     return updatedStateParticipants;
+}
+
+/**
+ * Wrapper for firefox's mozCaptureStream and chrome's captureStream method.
+ * @param node
+ */
+export function captureStream(node: any) {
+    if (node.captureStream) {
+        return node.captureStream();
+    } else if (node.mozCaptureStream) {
+        return node.mozCaptureStream();
+    }
+
+    console.error("This is an unsupported browser.");
+    return null;
 }
 
 function getUniqueListBy(arr: any[], key: string) {

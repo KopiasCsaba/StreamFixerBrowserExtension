@@ -15,7 +15,8 @@
       "matches": [
         "*://whereby.com/*",
         "*://meet.jit.si/*",
-        "*://meet.google.com/*"
+        "*://meet.google.com/*",
+        "*://discord.com/*"
       ],
       "js": [
         "main.js"

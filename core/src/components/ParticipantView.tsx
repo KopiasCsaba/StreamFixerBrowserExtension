@@ -23,11 +23,14 @@ export function ParticipantView(props: Props) {
         // Set the video's stream to the one that is grabbed from the original video element & update other parameters too.
         if ((props.participant.stream instanceof MediaStream)) {
             videoEl.current.srcObject = props.participant.stream;
+
+            videoEl.current.srcObject.onEnded = () => {
+                log("HUJUJUJ");
+            }
         }
         videoEl.current.setAttribute("playsinline", "true");
         videoEl.current.setAttribute("autoplay", "true");
         videoEl.current.setAttribute("muted", "true");
-        // videoEl.current.setAttribute("controls", "false");
     });
 
     const [ participants, setParticipants ] = useGlobal("participants");
