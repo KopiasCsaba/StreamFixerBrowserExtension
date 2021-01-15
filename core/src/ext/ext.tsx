@@ -42,9 +42,9 @@ export const getPageParticipants = (getvideoName: GetVideoNameCb): CrawledPartic
 
     elements = getUniqueListBy(elements, 'streamId');
     elements = getUniqueListBy(elements, 'name');
-    log("------------------");
+    // log("------------------");
     // log(JSON.stringify(elements, null, " "));
-    log(JSON.stringify(elements));
+    // log(JSON.stringify(elements));
     return elements;
 
 };
@@ -186,6 +186,11 @@ export function captureStream(node: any) {
     return null;
 }
 
-function getUniqueListBy(arr: any[], key: string) {
+/**
+ * Returns a unique set of elements, based on key.
+ * @param arr
+ * @param key
+ */
+function getUniqueListBy(arr: any[], key: string): any[] {
     return [ ...new Map(arr.map(item => [ item[ key ], item ])).values() ]
 }
