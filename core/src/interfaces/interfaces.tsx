@@ -15,6 +15,10 @@ export interface StateParticipant {
     stream?: any;
 
     lastUpdate: number;
+
+    // If the last iteration did not found this participant.
+    // Next time we see this, we need to update the stream!
+    wasMissing: boolean;
 }
 
 export type StateParticipantList = { [ key: string ]: StateParticipant };
