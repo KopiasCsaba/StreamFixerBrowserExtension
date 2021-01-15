@@ -1,3 +1,7 @@
 .idea
 core/node_modules/*
 builds/old*
+chrome/main.js
+firefox/main.js
+core/dist/*
+builds/*
