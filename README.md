@@ -8,6 +8,7 @@
  * [Tips](#tips)
  * [Known bugs](#known-bugs)
  * [Contribute](#contribute)
+ * [Changelog](#changelog)
 
 
 # Install
@@ -53,8 +54,9 @@ Watch how to live stream an online meeting:
 # Supported sites
 This is the list of online video conferencing applications that are supported by this extension:
 
-  * [http://whereby.com](http://whereby.com)
-  * [http://meet.jit.si](http://meet.jit.si)
+  * [https://whereby.com](https://whereby.com)
+  * [https://meet.jit.si](https://meet.jit.si)
+  * [https://meet.google.com/](https://meet.google.com/)
   
 Suggest other services if you need them, it is easy to add support for a page fits a few conditions.
 
@@ -104,12 +106,23 @@ If they were already there, they will be added back where they were before origi
 
  * Flashing when two or more participants have the same name
     * Solution: Never have participants with the same name.
+    
  * When someone joins every view flashes once
     * Solution: there is none yet
+   
  * When someone leaves, the overlay image remains there, but upon the next event it turns to black. I'm not even sure what would be good: keep it there, or turn it to black immediately.
     * Solution: there is none yet
+   
+ * Google meet image hangs in google chrome: I'm experiencing a strange behaviour, seemingly it happens only from android clients (more details in: [#12](https://github.com/KopiasCsaba/StreamFixerBrowserExtension/issues/12))
+    * Solution: There is none yet
+    * Workaround: change any of these: chrome to firefox/google meet to another service/the client from phone to pc
+   
 
 # Contribute
 Feel free to open issues, PR-s or just leave your comments or ideas in the issues.
 
 More information about development can be found in the [docs/development.md](docs/development.md) file.
+
+# Changelog
+## 2020-01-15
+ * 1.5.0: Added: Google Meet support
