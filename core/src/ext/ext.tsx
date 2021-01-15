@@ -42,6 +42,15 @@ export function getSiteConfig(): SiteConfig {
             }
         }
     }
+    // meet.google.com
+    if (url.match(/.*meet.google.com\/[^/]+/g) !== null) {
+        return {
+            name: "Google meet",
+            getVideoName: (videoNode: Element) => {
+                return videoNode.closest('div[data-requested-participant-id]').querySelector('div[data-self-name]').innerHTML;
+            }
+        }
+    }
 
     return null;
 }
@@ -81,7 +90,6 @@ export const getPageParticipants = (getvideoName: GetVideoNameCb): CrawledPartic
             // log(e); // doesn't matter.
             return; // The getVideoName was unable to determine the name.
         }
-        // log("RESULT: ", name)
 
         if (name === null || name === "") {
             return;
@@ -94,7 +102,10 @@ export const getPageParticipants = (getvideoName: GetVideoNameCb): CrawledPartic
         });
     });
 
+    elements = getUniqueListBy(elements, 'streamId');
+    elements = getUniqueListBy(elements, 'name');
     // log("------------------");
+    // log(JSON.stringify(elements, null, " "));
     return elements;
 
 };
@@ -116,22 +127,21 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
         const now = updatedStateParticipants[ pp.name ];
         if (now) {
             // We had this participant already
-
             if (now.currentStreamId != pp.streamId || !(now.stream instanceof MediaStream)) {
                 // But their stream is changed, or it wasn't a stream originally.
-                log("Updating participant...");
+                log("Updating participant...", pp.name);
                 changed = true;
                 now.stream = captureStream(pp.node);
                 now.currentStreamId = pp.streamId;
                 now.lastUpdate = Date.now();
             }
         } else {
-            // We didn't knew this participant before, add him/her.
+//             We didn't knew this participant before, add him/her.
             const stream = captureStream(pp.node);
             if (stream !== null && stream instanceof MediaStream && stream.active) {
                 // There is a stream, and it is working, etc...
                 changed = true;
-                log("Adding new participant...");
+                log("Adding new participant... ", pp.name);
                 updatedStateParticipants[ pp.name ] = {
                     currentStreamId: pp.streamId,
                     index: Object.keys(updatedStateParticipants).length,
@@ -148,4 +158,8 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
     }
     log("CHANGED:", changed);
     return updatedStateParticipants;
+}
+
+function getUniqueListBy(arr: any[], key: string) {
+    return [ ...new Map(arr.map(item => [ item[ key ], item ])).values() ]
 }
