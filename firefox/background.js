@@ -29,3 +29,24 @@ browser.runtime.onMessage.addListener(
         }
     }
 );
+
+// Check whether new version is installed
+function handleInstalled(details) {
+
+    if (details.reason !== "update" && details.reason !== "install") {
+        return;
+    }
+
+
+    if (details.previousVersion !== undefined && details.previousVersion.split('.').length === 4) {
+        console.log("Skipping changelog upon update.");
+        return;
+    }
+
+
+    browser.tabs.create({
+        url: browser.runtime.getURL('changelog/index.html#' + details.reason)
+    });
+}
+
+browser.runtime.onInstalled.addListener(handleInstalled);

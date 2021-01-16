@@ -9,6 +9,7 @@
 * [Tips](#tips)
 * [Known bugs](#known-bugs)
 * [Contribute](#contribute)
+* [Donate](#donate)
 * [Changelog](#changelog)
 
 # Install
@@ -129,9 +130,13 @@ Feel free to open issues, PR-s or just leave your comments or ideas in the issue
 
 More information about development can be found in the [docs/development.md](docs/development.md) file.
 
-# Changelog
+# Donate 
 
-## 2020-01-15
-* 1.6.0: Added: Discord support
-* 1.5.0: Added: Google Meet support
-* 1.4.2: Fixed: Whereby was broken 
+If you find this extension useful, please consider donating!
+
+I appreciate it, thanks!
+
+<a href="https://flattr.com/@kcsaba"><img src="docs/resources/donate.png" width="235" height="58"></a>
+
+# Changelog
+See [CHANGELOG.md](CHANGELOG.md)!

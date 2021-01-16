@@ -2,6 +2,8 @@
 core/node_modules/*
 builds/old*
 chrome/main.js
+chrome/changelog/*
 firefox/main.js
+firefox/changelog/*
 core/dist/*
 builds/*
