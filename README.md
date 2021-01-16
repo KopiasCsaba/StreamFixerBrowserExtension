@@ -129,5 +129,13 @@ Feel free to open issues, PR-s or just leave your comments or ideas in the issue
 
 More information about development can be found in the [docs/development.md](docs/development.md) file.
 
+# Donation 
+
+If you find this extension useful, please consider donating!
+
+I appreciate it, thanks!
+
+<a href="https://flattr.com/@kcsaba"><img src="docs/resources/donate.png"></a>
+
 # Changelog
 See [CHANGELOG.md](CHANGELOG.md)!
