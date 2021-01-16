@@ -21,3 +21,26 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         });
     }
 });
+
+// Check whether new version is installed
+function handleInstalled(details) {
+    console.log(details);
+
+
+    if (details.reason !== "update" && details.reason !== "install") {
+        return;
+    }
+
+
+    if (details.previousVersion !== undefined && details.previousVersion.split('.').length === 4) {
+        console.log("Skipping changelog upon update.");
+        return;
+    }
+
+
+    chrome.tabs.create({
+        url: chrome.runtime.getURL('changelog/index.html#' + details.reason)
+    });
+}
+
+chrome.runtime.onInstalled.addListener(handleInstalled);

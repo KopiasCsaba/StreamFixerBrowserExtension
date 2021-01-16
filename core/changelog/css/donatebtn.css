@@ -1,0 +1,50 @@
+.donatebtn:hover {
+    background: linear-gradient(90deg, #1d953f 0%, #209542 20.343056921228012%, #44c767 20.343056921228012%, #44c767 100%);
+}
+
+.donatebtn {
+    backface-visibility: hidden;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    background: linear-gradient(90deg, #1d953f 0%, #209542 20.343056921228012%, #4dde76 20.343056921228012%, #4dde76 100%);
+    border-radius: 5px;
+    border: 0px solid #444444;
+    padding: 6px 13px 6px 56px;
+    color: black;
+    font-size: 16px;
+    font-family: arial, serif;
+    font-weight: 700;
+    font-style: normal
+}
+
+.donatebtn > div {
+    color: #999999;
+    font-size:20px;
+    font-family: Arial, serif;
+    font-weight: initial;
+    font-style: normal;
+    text-align: center;
+    margin: 0px 0px 0px 0px;
+}
+
+.donatebtn > i {
+    color: #6ec286;
+    font-size: 1.3em;
+    background: #ffffff;
+    border-radius: 88px;
+    border: 0px solid #6ec286;
+    padding: 2px 4.5px 6px 3.5px;
+    margin: 0px 0px 0px 0px;
+    position: absolute;
+    top: 5px;
+    left: 8px;
+    width: 20px;
+    height: 20px
+}
+
+.donatebtn > .ld {
+    font-size: initial
+}

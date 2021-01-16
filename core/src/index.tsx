@@ -6,9 +6,11 @@ import { initState } from "./state/state";
 import { getSiteConfig } from "./ext/ext";
 import { log } from "./ext/log";
 
+const w = window as any;
 /**
  * This is the entrypoint of the injected content script.
  */
+
 
 const sc = getSiteConfig();
 

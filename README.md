@@ -130,8 +130,4 @@ Feel free to open issues, PR-s or just leave your comments or ideas in the issue
 More information about development can be found in the [docs/development.md](docs/development.md) file.
 
 # Changelog
-
-## 2020-01-15
-* 1.6.0: Added: Discord support
-* 1.5.0: Added: Google Meet support
-* 1.4.2: Fixed: Whereby was broken 
+See [CHANGELOG.md](CHANGELOG.md)!
