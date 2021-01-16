@@ -136,7 +136,7 @@ If you find this extension useful, please consider donating!
 
 I appreciate it, thanks!
 
-<a href="https://flattr.com/@kcsaba"><img src="docs/resources/donate.png"></a>
+<a href="https://flattr.com/@kcsaba"><img src="docs/resources/donate.png" width="235" height="58"></a>
 
 # Changelog
 See [CHANGELOG.md](CHANGELOG.md)!
