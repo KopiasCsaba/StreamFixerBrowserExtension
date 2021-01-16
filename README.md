@@ -9,6 +9,7 @@
 * [Tips](#tips)
 * [Known bugs](#known-bugs)
 * [Contribute](#contribute)
+* [Donate](#donate)
 * [Changelog](#changelog)
 
 # Install
@@ -129,7 +130,7 @@ Feel free to open issues, PR-s or just leave your comments or ideas in the issue
 
 More information about development can be found in the [docs/development.md](docs/development.md) file.
 
-# Donation 
+# Donate 
 
 If you find this extension useful, please consider donating!
 
