@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "StreamFixer",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "Grabs video elements and fixes them in an overlay, enabling window capturing in streaming software.",
   "icons": {
     "48": "icons/mipmap-mdpi/ic_launcher.png",
@@ -10,9 +10,6 @@
     "144": "icons/mipmap-xxhdpi/ic_launcher.png",
     "192": "icons/mipmap-xxxhdpi/ic_launcher.png"
   },
-  "permissions": [
-    "storage"
-  ],
   "content_scripts": [
     {
       "matches": [

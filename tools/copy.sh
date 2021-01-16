@@ -2,6 +2,7 @@
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 cd "$DIR"
 
+rm -Rf ../firefox/changelog/* ../chrome/changelog/*;
 cp -r ../core/dist/prod/main.js  ../core/changelog/ ../firefox/
 cp -r ../core/dist/prod/main.js  ../core/changelog/ ../chrome/
 
