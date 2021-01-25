@@ -25,12 +25,13 @@ export function ParticipantView(props: Props) {
             videoEl.current.srcObject = props.participant.stream;
 
             videoEl.current.srcObject.onEnded = () => {
-                log("HUJUJUJ");
+                log("StreamEnded: ", props.participant.name);
             }
         }
         videoEl.current.setAttribute("playsinline", "true");
         videoEl.current.setAttribute("autoplay", "true");
         videoEl.current.setAttribute("muted", "true");
+
     });
 
     const [ participants, setParticipants ] = useGlobal("participants");
@@ -51,6 +52,7 @@ export function ParticipantView(props: Props) {
             {!props.isGuest && <input type="button" value="✕" onClick={onRemove}/>}
             {props.participant.name}
         </div>
-        <video ref={videoEl} className="sfVideo"/>
+        <video ref={videoEl} className="sfVideo" muted={true} autoPlay={true} playsInline={true}/>
+        {/* It is important to have the attributes here, since muted=true would not be false on first render and would trigger permission issues */}
     </div>
 }

@@ -1,6 +1,6 @@
 {
   "name": "StreamFixer",
-  "version": "1.6.2",
+  "version": "1.6.4",
   "description": "Grabs video elements and fixes them in an overlay, enabling window capturing in streaming software.",
   "manifest_version": 2,
   "icons": {
@@ -14,10 +14,11 @@
   "content_scripts": [
     {
       "matches": [
-        "*://whereby.com/*",
+        "*://*.whereby.com/*",
         "*://meet.jit.si/*",
         "*://meet.google.com/*",
-        "*://discord.com/*"
+        "*://discord.com/*",
+        "*://app.livestorm.co/*"
       ],
       "js": [
         "main.js"
