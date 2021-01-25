@@ -32,6 +32,27 @@ export const getPageParticipants = (getvideoName: GetVideoNameCb): CrawledPartic
         if (name === null || name === "") {
             return;
         }
+        //
+        // const d = {
+        //     q: node.getVideoPlaybackQuality(),
+        //     msFrameStep: node.msFrameStep,
+        //     poster: node.poster,
+        //     videoWidth: node.videoWidth,
+        //     videoHeight: node.videoHeight,
+        //     attributes: node.attributes,
+        //     isConnected: node.isConnected,
+        //     frames: node?.getVideoPlaybackQuality()?.totalVideoFrames
+        //
+        // }
+        // log(JSON.stringify(d, null, " "));
+        //
+        // if (node?.getVideoPlaybackQuality()?.totalVideoFrames === undefined || node?.getVideoPlaybackQuality()?.totalVideoFrames < 50) {
+        //     // There was a bug with chrome (especially in google meet) where captureStream messed up even the original stream too.
+        //     // So now basically we wait a littlebit, to have the stream initialised properly.
+        //
+        //     log(">> skipping this node.", node?.getVideoPlaybackQuality()?.totalVideoFrames);
+        //     return;
+        // }
 
         elements.push({
             streamId: (node.srcObject as any).id,
@@ -107,7 +128,18 @@ export function getSiteConfig(): SiteConfig {
             }
         }
     }
+    // LIVESTORM
+    if (url.match(/.*app.livestorm.co\/[^/]+\/[^/]+\/live.*/g) !== null) {
+        return {
+            name: "LIVESTORM",
+            getVideoName: (videoNode: Element) => {
 
+                return videoNode.closest('div.stage-item').querySelector('div.name').innerHTML;
+            }
+        }
+    }
+
+    log("No supported site found:(");
     return null;
 }
 
