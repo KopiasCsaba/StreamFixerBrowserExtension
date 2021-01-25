@@ -21,7 +21,8 @@ if (sc != null) {
     initState(sc);
 
     const c = document.createElement("div");
-    window.document.body.appendChild(c);
+    setTimeout(() => window.document.body.prepend(c), 2000);
+    // ^^ This was needed for golighstream, it was clearing body onload...
     ReactDOM.render(<App/>, c);
 }
 

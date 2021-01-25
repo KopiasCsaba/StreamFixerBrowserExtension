@@ -138,6 +138,29 @@ export function getSiteConfig(): SiteConfig {
             }
         }
     }
+    // GOLIGHTSTREAM
+    if (url.match(/.*studio.golightstream.com\/projects\/[^/]+.*/g) !== null) {
+        return {
+            name: "LIVESTORM",
+            getVideoName: (videoNode: Element) => {
+
+                // manipulator-title
+
+                if (videoNode.closest('div.editor-item-container') !== null) {
+                    const scene = videoNode.closest('.edit-scene');
+                    const sceneindex = Array.prototype.indexOf.call(scene.parentNode.children, scene) + 1;
+                    log("Scene index: ", sceneindex);
+                    let name = videoNode.closest('div.editor-item-container').querySelector('span.manipulator-title').innerHTML;
+                    log(sceneindex,name);
+                    name = `SC${sceneindex}-${name}`
+                    if (name !== "undefined") {
+                        return name;
+                    }
+                }
+
+            }
+        }
+    }
 
     log("No supported site found:(");
     return null;
@@ -157,6 +180,9 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
     let changed = false;
 
     for (const pp of pageParticipants) {
+        if(!pp.name) {
+            continue;
+        }
         const now = updatedStateParticipants[ pp.name ];
         if (now) {
             // We had this participant already
@@ -189,6 +215,9 @@ export function updateStateParticipants(stateParticipants: StateParticipantList,
     }
     for (const spName of Object.keys(updatedStateParticipants)) {
         if (pageParticipants.filter(pp => pp.name == spName).length == 0) {
+            if(!spName) {
+                continue;
+            }
             if (!updatedStateParticipants[ spName ].wasMissing) {
                 log("MISSING PARTICIPANT:", spName);
                 updatedStateParticipants[ spName ].wasMissing = true;
