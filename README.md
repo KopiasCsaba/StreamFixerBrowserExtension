@@ -32,6 +32,8 @@ Install the extension from the official stores of Firefox and Chrome:
  </tr>
  </table>
 
+Warning: There is a fake version in the Mozilla appstore. I have reported it several times without any success. If you want, report it yourself also to make a bigger impact.
+
 # StreamFixer Firefox & Chrome extension
 
 This extension is for you, if you want to broadcast a video chat to your audience from a streaming software like  [OBS](http://obsproject.com), vMix, XSplit or Wirecast.
